@@ -1,0 +1,7 @@
+/* fonts */
+@import "./general-sans.css";
+
+/* variables */
+* {
+    font-family: "General Sans", sans-serif;
+}
