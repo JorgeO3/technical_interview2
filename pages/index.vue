@@ -260,7 +260,7 @@ const companyIds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
       </button>
     </div>
     <div class="w-full md:w-1/2 flex justify-center p-8">
-      <NuxtImg src="/journey-icon.png" alt="Branding" class="max-w-xs w-full" />
+      <NuxtImg src="/journey-icon.png" alt="Branding" class="max-w-60 lg:max-w-xs w-full" />
     </div>
   </section>
 
