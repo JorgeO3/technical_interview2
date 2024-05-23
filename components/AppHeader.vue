@@ -1,41 +1,57 @@
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue';
+
 const links = [
-  {
-    label: "How it works",
-    to: "/",
-  },
-  {
-    label: "Our Work",
-    to: "/our-work",
-  },
-  {
-    label: "Pricing",
-    to: "/pricing",
-  },
-  {
-    label: "About Us",
-    to: "/about-us",
-  },
+  { label: "How it works", to: "/" },
+  { label: "Our Work", to: "/our-work" },
+  { label: "Pricing", to: "/pricing" },
+  { label: "About Us", to: "/about-us" },
 ];
+
+const isMenuOpen = ref(false);
+const isScrolled = ref(false);
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value;
+};
+
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 0;
+};
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll);
+});
 </script>
 
 <template>
-  <div class="header-container">
-    <header class="header max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div :class="{ 'shadow-md': isScrolled }"
+    class="header-container relative w-full top-0 left-0 z-50 bg-white transition-shadow duration-300">
+    <header class="w-full mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
       <!-- Logo -->
       <NuxtLink to="/">
-        <NuxtImg src="/logo.svg" alt="Logo" />
+        <NuxtImg src="/logo.svg" alt="Logo" class="h-10" />
       </NuxtLink>
 
+      <!-- Burger Menu -->
+      <div class="lg:hidden">
+        <button @click="toggleMenu" class="text-gray-600 hover:text-blue-600 focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+
       <!-- Navigation -->
-      <nav>
-        <ul>
+      <nav :class="{ 'block': isMenuOpen, 'hidden': !isMenuOpen }" class="lg:block hidden">
+        <ul class="flex flex-col lg:flex-row items-center gap-6">
           <li v-for="link in links" :key="link.to">
-            <NuxtLink
-              :to="link.to"
-              class="custom-link"
-              active-class="custom-link-active"
-            >
+            <NuxtLink :to="link.to" class="custom-link text-gray-600 hover:text-blue-600 transition font-medium"
+              active-class="text-blue-600">
               {{ link.label }}
             </NuxtLink>
           </li>
@@ -43,77 +59,45 @@ const links = [
       </nav>
 
       <!-- Button -->
-      <button class="header-button">Book A Call</button>
+      <button
+        class="header-button hidden lg:inline-block py-2 px-4 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition">
+        Book A Call
+      </button>
     </header>
+
+    <!-- Mobile Menu -->
+    <div :class="{ 'block': isMenuOpen, 'hidden': !isMenuOpen }" class="lg:hidden">
+      <nav>
+        <ul class="flex flex-col items-center gap-4 py-4">
+          <li v-for="link in links" :key="link.to">
+            <NuxtLink :to="link.to" class="custom-link text-gray-600 hover:text-blue-600 transition font-medium"
+              active-class="text-blue-600">
+              {{ link.label }}
+            </NuxtLink>
+          </li>
+          <li>
+            <button
+              class="header-button py-2 px-4 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition">
+              Book A Call
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </template>
 
 <style scoped>
-.header-container {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  padding: 0;
-  background-color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-}
-.header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  width: 100%;
-}
-.header nav ul {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-}
 .custom-link {
-  color: #666;
-  text-decoration: none;
-  font-size: 16px;
-  font-family: "GeneralSans-Medium", sans-serif;
-  font-weight: 500;
-  transition: ease-in-out 0.3s;
-}
-
-.custom-link:hover {
-  color: #3461ff;
-  text-decoration: none;
-  font-size: 16px;
-  font-family: "GeneralSans-Medium", sans-serif;
-  font-weight: 500;
-}
-
-.custom-link-active {
-  color: #3461ff;
-  text-decoration: none;
   font-size: 16px;
   font-family: "GeneralSans-Medium", sans-serif;
   font-weight: 500;
 }
 
 .header-button {
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  background-color: #3461ff;
-  color: #fff;
   font-size: 15px;
   font-family: "GeneralSans-Medium", sans-serif;
   font-weight: 500;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-}
-.header-button:hover {
-  background-color: #1e3de4;
-  transition: ease-in-out 0.3s;
-}
-/* click effect*/
-.header-button:active {
-  background-color: #6c8cff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 </style>

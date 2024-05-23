@@ -62,9 +62,9 @@ const cards: Card[] = [
 
     <div class="carousel-cards-container">
       <ClientOnly>
-        <UCarousel :items="cards" ref="carousel" arrows>
+        <UCarousel :items="cards" ref="carousel" arrows :ui="{ item: 'w-full' }">
           <template #default="{ item }">
-            <div class="carousel-card">
+            <div class="carousel-card max-w-80 sm:max-w-96">
               <div class="carousel-card-header">
                 <NuxtImg :src="item.image" :alt="item.name" width="60px" />
                 <div class="carousel-card-header-text">
@@ -161,7 +161,7 @@ const cards: Card[] = [
 
 .carousel-card {
   display: flex;
-  max-width: 400px;
+  /* max-width: 300px; */
   flex-direction: column;
   justify-content: center;
   align-items: center;
