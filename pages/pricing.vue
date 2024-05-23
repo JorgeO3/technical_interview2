@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="pricing-container">
     <h1>Pricing!</h1>
   </div>
@@ -21,4 +21,14 @@
   font-size: 6rem;
   font-family: "GeneralSans-Semibold", sans-serif;
 }
-</style>
+</style> -->
+
+<template>
+  <div class="our-work-container flex justify-center items-center h-screen">
+    <h1 class="text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-gray-800">
+      Pricing!
+    </h1>
+  </div>
+</template>
+
+<script lang="ts" setup></script>

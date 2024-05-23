@@ -15,6 +15,10 @@ const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
 };
 
+const closeMenu = () => {
+  isMenuOpen.value = false;
+};
+
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 0;
 };
@@ -33,7 +37,7 @@ onUnmounted(() => {
     class="header-container fixed w-full top-0 left-0 z-50 bg-white transition-shadow duration-300">
     <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
       <!-- Logo -->
-      <NuxtLink to="/">
+      <NuxtLink to="/" @click="closeMenu">
         <NuxtImg src="/logo.svg" alt="Logo" class="h-10" />
       </NuxtLink>
 
@@ -51,7 +55,7 @@ onUnmounted(() => {
         <ul class="flex flex-col lg:flex-row items-center gap-6">
           <li v-for="link in links" :key="link.to">
             <NuxtLink :to="link.to" class="custom-link text-gray-600 hover:text-blue-600 transition font-medium"
-              active-class="text-blue-600">
+              active-class="text-blue-600" @click="closeMenu">
               {{ link.label }}
             </NuxtLink>
           </li>
@@ -71,12 +75,12 @@ onUnmounted(() => {
         <ul class="flex flex-col items-center gap-4 py-4">
           <li v-for="link in links" :key="link.to">
             <NuxtLink :to="link.to" class="custom-link text-gray-600 hover:text-blue-600 transition font-medium"
-              active-class="text-blue-600">
+              active-class="text-blue-600" @click="closeMenu">
               {{ link.label }}
             </NuxtLink>
           </li>
           <li>
-            <button
+            <button @click="closeMenu"
               class="header-button py-2 px-4 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition">
               Book A Call
             </button>
