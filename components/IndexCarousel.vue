@@ -62,7 +62,7 @@ const cards: Card[] = [
 
     <div class="carousel-cards-container">
       <ClientOnly>
-        <UCarousel :items="cards" ref="carousel" arrows :ui="{ item: 'w-full' }">
+        <UCarousel :items="cards" ref="carousel" arrows>
           <template #default="{ item }">
             <div class="carousel-card max-w-80 sm:max-w-96">
               <div class="carousel-card-header">

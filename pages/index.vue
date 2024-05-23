@@ -72,7 +72,7 @@ const companyIds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 flex flex-col lg:flex-row gap-8">
 
     <div class="w-full lg:w-1/2 flex flex-col">
-      <h1 class="text-4xl font-medium">How It Works</h1>
+      <h1 class="text-4xl font-medium lg:text-6xl">How It Works</h1>
       <p class="text-gray-600 mt-4">
         We believe that the best way to create successful marketing campaigns is to work closely with our clients to
         understand their goals and challenges.
@@ -80,9 +80,8 @@ const companyIds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 
       <NuxtImg src="/how-it-works.png" class="mt-8 max-w-md" alt="How It Works" />
-
-
     </div>
+
     <div class="w-full lg:w-1/2 mt-12 md:mt-0 flex flex-col space-y-8">
       <div class="flex items-start">
         <NuxtImg src="/discovery-icon.png" alt="Discovery" class="w-14 h-14 sm:w-auto sm:h-auto w-max" />
@@ -191,7 +190,7 @@ const companyIds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 
   <!-- Seventh Section -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 flex flex-col md:flex-row items-center">
+  <!-- <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 flex flex-col md:flex-row items-center">
     <div class="w-full md:w-1/2 flex flex-wrap justify-center gap-4">
       <NuxtImg class="w-24 h-24" src="/member1.png" alt="Member 1" />
       <NuxtImg class="w-24 h-24" src="/member2.png" alt="Member 2" />
@@ -210,7 +209,36 @@ const companyIds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
         class="mx-auto w-full md:w-1/2 lg:w-1/4 mt-8 p-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition">Learn
         More</button>
     </div>
+  </section> -->
+
+  <!-- Seventh Section -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 flex flex-col md:flex-row items-center">
+    <div class="w-full md:w-1/2 flex flex-col items-center gap-4">
+      <!-- Primera fila de imágenes -->
+      <div class="flex justify-center gap-4">
+        <NuxtImg class="w-24 h-24 lg:w-auto lg:h-auto max-w-36" src="/member1.png" alt="Member 1" />
+        <NuxtImg class="w-24 h-24 lg:w-auto lg:h-auto max-w-36" src="/member2.png" alt="Member 2" />
+        <NuxtImg class="w-24 h-24 lg:w-auto lg:h-auto max-w-36" src="/member3.png" alt="Member 3" />
+      </div>
+      <!-- Segunda fila de imágenes -->
+      <div class="flex justify-center gap-4">
+        <NuxtImg class="w-24 h-24 lg:w-auto lg:h-auto max-w-36" src="/member4.png" alt="Member 4" />
+        <NuxtImg class="w-24 h-24 lg:w-auto lg:h-auto max-w-36" src="/member5.png" alt="Member 5" />
+        <NuxtImg class="w-24 h-24 lg:w-auto lg:h-auto max-w-36" src="/member6.png" alt="Member 6" />
+      </div>
+    </div>
+    <div class="w-full md:w-1/2 mt-12 md:mt-0 text-center md:text-left px-8">
+      <h1 class="text-4xl font-medium">Meet Our Team</h1>
+      <p class="text-lg text-gray-600 mt-4">
+        Discover the brilliance behind Embrace. Our team blends innovation and artistry to craft digital wonders that
+        captivate.
+      </p>
+      <button
+        class="mx-auto w-full md:w-1/2 lg:w-2/4 2xl:w-1/4 mt-8 p-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition">Learn
+        More</button>
+    </div>
   </section>
+
 
   <!-- Eighth Section -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">

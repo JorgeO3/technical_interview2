@@ -30,8 +30,8 @@ onUnmounted(() => {
 
 <template>
   <div :class="{ 'shadow-md': isScrolled }"
-    class="header-container relative w-full top-0 left-0 z-50 bg-white transition-shadow duration-300">
-    <header class="w-full mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
+    class="header-container fixed w-full top-0 left-0 z-50 bg-white transition-shadow duration-300">
+    <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
       <!-- Logo -->
       <NuxtLink to="/">
         <NuxtImg src="/logo.svg" alt="Logo" class="h-10" />
