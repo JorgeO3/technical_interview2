@@ -6,9 +6,9 @@
       class="footer-contact-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
 
       <div class="footer-left-container flex flex-col items-center mb-8 md:mb-0 lg:w-1/2">
-        <NuxtImg src="/logo.svg" alt="Logo" class="w-32 mb-6" />
+        <NuxtImg src="/logo.svg" alt="Logo" class="w-44 mb-6" />
 
-        <div class="social-networks flex gap-6 mb-6">
+        <div class="social-networks flex gap-8 my-6">
           <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
             <NuxtImg src="/instagram.svg" alt="Instagram" class="w-8 h-8" />
           </a>
@@ -20,7 +20,7 @@
           </a>
         </div>
 
-        <button class="bg-blue-600 text-white rounded-full px-8 py-3 hover:bg-blue-700 transition">
+        <button class="bg-blue-600 text-white rounded-full px-8 py-3 hover:bg-blue-700 transition mt-6">
           Contact Us
         </button>
       </div>

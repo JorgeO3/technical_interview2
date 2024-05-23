@@ -247,15 +247,15 @@ const companyIds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   <!-- Ninth Section -->
   <section
-    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 flex flex-col md:flex-row items-center bg-cover bg-center rounded-3xl"
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center bg-cover bg-center rounded-3xl my-20 lg:my-28"
     style="background-image: url('/ninth-section-bg.png');">
     <div class="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left text-white p-8">
-      <h1 class="text-4xl font-medium mb-4">
+      <h1 class="text-4xl font-medium mb-4 lg:text-6xl lg:leading-normal">
         Start Your Journey
         <br />
         With Us Now
       </h1>
-      <button class="mt-4 p-3 bg-blue-600 rounded-full hover:bg-blue-700 transition">
+      <button class="mt-4 p-3 lg:w-1/4 bg-blue-600 rounded-full hover:bg-blue-700 transition">
         Start Now
       </button>
     </div>
